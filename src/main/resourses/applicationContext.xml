@@ -7,6 +7,10 @@
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="myPed" class="ru.suleymanovtat.Dog"/>
+    <bean id="myPed" class="ru.suleymanovtat.model.Dog"/>
+
+    <bean id="person" class="ru.suleymanovtat.model.Person">
+        <constructor-arg ref="myPed"/>
+    </bean>
 
 </beans>
