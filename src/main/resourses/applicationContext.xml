@@ -14,9 +14,16 @@
     <bean id="person" class="ru.suleymanovtat.model.Person">
         <constructor-arg ref="myPed"/>
     </bean>
+
     <!--    передачи данных через сеттеры-->
     <bean id="people" class="ru.suleymanovtat.model.People">
         <property name="animal" ref="myPed"/>
+    </bean>
+
+    <!--    передачи значения через сеттеры-->
+    <bean id="cat" class="ru.suleymanovtat.model.Cat">
+        <property name="name" value="Kissa"/>
+        <property name="age" value="99"/>
     </bean>
 
 </beans>

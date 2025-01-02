@@ -2,6 +2,7 @@ package ru.suleymanovtat;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import ru.suleymanovtat.model.Cat;
 import ru.suleymanovtat.model.Dog;
 import ru.suleymanovtat.model.People;
 import ru.suleymanovtat.model.Person;
@@ -22,6 +23,9 @@ public class App {
 
         People people = context.getBean("people", People.class);
         people.name();
+
+        Cat cat = context.getBean("cat", Cat.class);
+        System.out.println("Name: "+cat.getName() + " age: " + cat.getAge());
         context.close();
     }
 }
