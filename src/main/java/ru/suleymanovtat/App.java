@@ -3,6 +3,7 @@ package ru.suleymanovtat;
 import org.springframework.beans.BeansException;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ru.suleymanovtat.model.Dog;
+import ru.suleymanovtat.model.People;
 import ru.suleymanovtat.model.Person;
 
 /**
@@ -18,6 +19,9 @@ public class App {
 
         Person person = context.getBean("person", Person.class);
         person.animalName();
+
+        People people = context.getBean("people", People.class);
+        people.name();
         context.close();
     }
 }

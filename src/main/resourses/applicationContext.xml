@@ -7,10 +7,16 @@
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!--    создания объекта-->
     <bean id="myPed" class="ru.suleymanovtat.model.Dog"/>
 
+    <!--    передача данных через конструктор-->
     <bean id="person" class="ru.suleymanovtat.model.Person">
         <constructor-arg ref="myPed"/>
+    </bean>
+    <!--    передачи данных через сеттеры-->
+    <bean id="people" class="ru.suleymanovtat.model.People">
+        <property name="animal" ref="myPed"/>
     </bean>
 
 </beans>
