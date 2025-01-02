@@ -7,6 +7,7 @@
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="myApp.properties"/>
     <!--    создания объекта-->
     <bean id="myPed" class="ru.suleymanovtat.model.Dog"/>
 
@@ -24,6 +25,12 @@
     <bean id="cat" class="ru.suleymanovtat.model.Cat">
         <property name="name" value="Kissa"/>
         <property name="age" value="99"/>
+    </bean>
+
+    <!--    получение данных из myApp.properties-->
+    <bean id="phone" class="ru.suleymanovtat.model.Phone">
+        <property name="name" value="${phone.name}"/>
+        <property name="model" value="${phone.model}"/>
     </bean>
 
 </beans>
