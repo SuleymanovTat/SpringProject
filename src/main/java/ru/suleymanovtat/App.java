@@ -22,10 +22,15 @@ public class App {
         people.name();
 
         Cat cat = context.getBean("cat", Cat.class);
-        System.out.println("Name: "+cat.getName() + ", age: " + cat.getAge());
+        System.out.println("Name: " + cat.getName() + ", age: " + cat.getAge());
 
         Phone phone = context.getBean("phone", Phone.class);
-        System.out.println("Name: "+phone.getName() + ", model: " + phone.getModel());
+        System.out.println("Name: " + phone.getName() + ", model: " + phone.getModel());
+
+        Table table = context.getBean("table", Table.class);
+        Table table2 = context.getBean("table", Table.class);
+        System.out.println("Table name: " + table.getName());
+        System.out.println("Table == table2: " + (table == table2));
         context.close();
     }
 }

@@ -33,4 +33,10 @@
         <property name="model" value="${phone.model}"/>
     </bean>
 
+    <!--    scope="singleton" по умолчанию-->
+    <bean id="table" class="ru.suleymanovtat.model.Table"
+          scope="prototype">
+        <constructor-arg value="realme"/>
+    </bean>
+
 </beans>
