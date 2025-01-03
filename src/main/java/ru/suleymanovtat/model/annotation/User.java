@@ -1,11 +1,16 @@
 package ru.suleymanovtat.model.annotation;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component("userId")
+//@Scope(value = "singleton")
+@Scope(value = "prototype")
 public class User {
 
     @Value("ilmir")
@@ -45,5 +50,15 @@ public class User {
 
     public int getAge() {
         return age;
+    }
+
+    @PostConstruct
+    void init() {
+        System.out.println("init User");
+    }
+
+    @PreDestroy
+    void destroy() {
+        System.out.println("destroy User");
     }
 }
