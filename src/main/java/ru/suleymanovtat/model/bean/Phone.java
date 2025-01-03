@@ -1,4 +1,4 @@
-package ru.suleymanovtat.model;
+package ru.suleymanovtat.model.bean;
 
 public class Phone {
     public String name;

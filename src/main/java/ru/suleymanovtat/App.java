@@ -2,7 +2,10 @@ package ru.suleymanovtat;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.suleymanovtat.model.*;
+import ru.suleymanovtat.model.annotation.Albom;
+import ru.suleymanovtat.model.annotation.Audio;
+import ru.suleymanovtat.model.annotation.Music;
+import ru.suleymanovtat.model.bean.*;
 
 /**
  * Hello world!
@@ -41,6 +44,11 @@ public class App {
         Audio audio = contextAnnotation.getBean("audio", Audio.class);
         audio.play();
         audio.pause();
+
+        System.out.println("\nAlbom");
+        Albom albom = contextAnnotation.getBean("albomId", Albom.class);
+        albom.audio.play();
+        albom.audio.pause();
         contextAnnotation.close();
     }
 }

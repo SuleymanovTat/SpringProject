@@ -9,26 +9,26 @@
 
     <context:property-placeholder location="myApp.properties"/>
     <!--    создания объекта-->
-    <bean id="myPed" class="ru.suleymanovtat.model.Dog"/>
+    <bean id="myPed" class="ru.suleymanovtat.model.bean.Dog"/>
 
     <!--    передача данных через конструктор-->
-    <bean id="person" class="ru.suleymanovtat.model.Person">
+    <bean id="person" class="ru.suleymanovtat.model.bean.Person">
         <constructor-arg ref="myPed"/>
     </bean>
 
     <!--    передачи данных через сеттеры-->
-    <bean id="people" class="ru.suleymanovtat.model.People">
+    <bean id="people" class="ru.suleymanovtat.model.bean.People">
         <property name="animal" ref="myPed"/>
     </bean>
 
     <!--    передачи значения через сеттеры-->
-    <bean id="cat" class="ru.suleymanovtat.model.Cat">
+    <bean id="cat" class="ru.suleymanovtat.model.bean.Cat">
         <property name="name" value="Kissa"/>
         <property name="age" value="99"/>
     </bean>
 
     <!--    получение данных из myApp.properties-->
-    <bean id="phone" class="ru.suleymanovtat.model.Phone">
+    <bean id="phone" class="ru.suleymanovtat.model.bean.Phone">
         <property name="name" value="${phone.name}"/>
         <property name="model" value="${phone.model}"/>
     </bean>
@@ -37,7 +37,7 @@
     <!--    1.13 Методы init и destroy-->
     <!--    singleton вызывается destroy-->
     <!--    prototype  destroy не вызывается(надо самому вызвать)-->
-    <bean id="table" class="ru.suleymanovtat.model.Table"
+    <bean id="table" class="ru.suleymanovtat.model.bean.Table"
           scope="prototype"
           init-method="init"
           destroy-method="destroy">

@@ -1,4 +1,4 @@
-package ru.suleymanovtat.model;
+package ru.suleymanovtat.model.bean;
 
 import java.util.Objects;
 
