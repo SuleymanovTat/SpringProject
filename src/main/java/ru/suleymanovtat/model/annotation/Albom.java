@@ -8,6 +8,8 @@ public class Albom {
 
     public Audio audio;
     public Music music;
+    @Autowired
+    private Video video;
 
     @Autowired
     public Albom(Audio audio) {
@@ -17,5 +19,13 @@ public class Albom {
     @Autowired
     public void setMusic(Music music) {
         this.music = music;
+    }
+
+    public void playVideo() {
+        video.playVideo();
+    }
+
+    public void pauseVideo() {
+        video.pauseVideo();
     }
 }

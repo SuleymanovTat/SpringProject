@@ -49,8 +49,13 @@ public class App {
         Albom albom = contextAnnotation.getBean("albomId", Albom.class);
         albom.audio.play();
         albom.audio.pause();
+
         albom.music.pause();
         albom.music.pause();
+
+        albom.playVideo();
+        albom.pauseVideo();
+
         contextAnnotation.close();
     }
 }
