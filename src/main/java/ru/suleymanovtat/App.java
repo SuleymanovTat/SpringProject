@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ru.suleymanovtat.model.annotation.Albom;
 import ru.suleymanovtat.model.annotation.Audio;
 import ru.suleymanovtat.model.annotation.Music;
+import ru.suleymanovtat.model.annotation.User;
 import ru.suleymanovtat.model.bean.*;
 
 /**
@@ -55,7 +56,11 @@ public class App {
 
         albom.playVideo();
         albom.pauseVideo();
+        System.out.println();
 
+        User user = contextAnnotation.getBean("userId", User.class);
+        user.runCar();
+        user.homeCar();
         contextAnnotation.close();
     }
 }
