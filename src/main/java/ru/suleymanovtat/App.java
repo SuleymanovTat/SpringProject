@@ -32,5 +32,15 @@ public class App {
         System.out.println("Table name: " + table.getName());
         System.out.println("Table == table2: " + (table == table2));
         context.close();
+
+        ClassPathXmlApplicationContext contextAnnotation = new ClassPathXmlApplicationContext("applicationAnnotationContext.xml");
+        Music music = contextAnnotation.getBean("musicId", Music.class);
+        music.play();
+        music.pause();
+
+        Audio audio = contextAnnotation.getBean("audio", Audio.class);
+        audio.play();
+        audio.pause();
+        contextAnnotation.close();
     }
 }
