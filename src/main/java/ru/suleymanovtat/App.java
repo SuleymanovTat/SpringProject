@@ -60,7 +60,8 @@ public class App {
 
         User user = contextAnnotation.getBean("userId", User.class);
         user.runCar();
-        user.homeCar();
+        System.out.println("Name: " + user.getName() + " age: "+ user.getAge());
+
         contextAnnotation.close();
     }
 }
