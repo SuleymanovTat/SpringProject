@@ -10,4 +10,12 @@ public class Table {
     public String getName() {
         return name;
     }
+
+    private void init(){
+        System.out.println("init");
+    }
+
+    private void destroy(){
+        System.out.println("destroy");
+    }
 }

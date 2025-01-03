@@ -34,8 +34,13 @@
     </bean>
 
     <!--    scope="singleton" по умолчанию-->
+    <!--    1.13 Методы init и destroy-->
+    <!--    singleton вызывается destroy-->
+    <!--    prototype  destroy не вызывается(надо самому вызвать)-->
     <bean id="table" class="ru.suleymanovtat.model.Table"
-          scope="prototype">
+          scope="prototype"
+          init-method="init"
+          destroy-method="destroy">
         <constructor-arg value="realme"/>
     </bean>
 
