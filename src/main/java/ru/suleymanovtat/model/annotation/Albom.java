@@ -7,9 +7,15 @@ import org.springframework.stereotype.Component;
 public class Albom {
 
     public Audio audio;
+    public Music music;
 
     @Autowired
     public Albom(Audio audio) {
         this.audio = audio;
+    }
+
+    @Autowired
+    public void setMusic(Music music) {
+        this.music = music;
     }
 }
