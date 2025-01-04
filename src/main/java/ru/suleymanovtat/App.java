@@ -5,10 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ru.suleymanovtat.config.AppConfig;
 import ru.suleymanovtat.config.MyAppConfig;
-import ru.suleymanovtat.model.annotation.Albom;
-import ru.suleymanovtat.model.annotation.Audio;
-import ru.suleymanovtat.model.annotation.Music;
-import ru.suleymanovtat.model.annotation.User;
+import ru.suleymanovtat.model.annotation.*;
 import ru.suleymanovtat.model.bean.*;
 
 /**
@@ -85,6 +82,10 @@ public class App {
         System.out.println("annotationConfig2: ");
         cat4.setName("Cat name: May");
         System.out.println(cat4.getName());
+        System.out.println();
+        Child child4 = annotationConfig2.getBean("childBean", Child.class);
+        System.out.println("Child: "+ child4.getName() + " " + child4.getAge());
+
         annotationConfig2.close();
     }
 }
