@@ -1,7 +1,10 @@
 package ru.suleymanovtat;
 
 import org.springframework.beans.BeansException;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import ru.suleymanovtat.config.AppConfig;
+import ru.suleymanovtat.config.MyAppConfig;
 import ru.suleymanovtat.model.annotation.Albom;
 import ru.suleymanovtat.model.annotation.Audio;
 import ru.suleymanovtat.model.annotation.Music;
@@ -66,5 +69,22 @@ public class App {
         User user2 = contextAnnotation.getBean("userId", User.class);
         System.out.println(user == user2);
         contextAnnotation.close();
+
+
+        AnnotationConfigApplicationContext annotationConfig = new AnnotationConfigApplicationContext(AppConfig.class);
+        Albom albom3 = annotationConfig.getBean("albomId", Albom.class);
+        System.out.println();
+        System.out.println("AnnotationConfigApplicationContext: ");
+        albom3.audio.play();
+        annotationConfig.close();
+
+
+        AnnotationConfigApplicationContext annotationConfig2 = new AnnotationConfigApplicationContext(MyAppConfig.class);
+        Cat cat4 = annotationConfig2.getBean("catBean", Cat.class);
+        System.out.println();
+        System.out.println("annotationConfig2: ");
+        cat4.setName("Cat name: May");
+        System.out.println(cat4.getName());
+        annotationConfig2.close();
     }
 }
