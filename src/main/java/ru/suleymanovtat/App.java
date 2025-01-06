@@ -3,6 +3,7 @@ package ru.suleymanovtat;
 import org.springframework.beans.BeansException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import ru.suleymanovtat.aop.Library;
 import ru.suleymanovtat.config.AppConfig;
 import ru.suleymanovtat.config.MyAppConfig;
 import ru.suleymanovtat.model.annotation.*;
@@ -84,8 +85,10 @@ public class App {
         System.out.println(cat4.getName());
         System.out.println();
         Child child4 = annotationConfig2.getBean("childBean", Child.class);
-        System.out.println("Child: "+ child4.getName() + " " + child4.getAge());
-
+        System.out.println("Child: " + child4.getName() + " " + child4.getAge());
+        System.out.println();
+        Library library = annotationConfig2.getBean("libraryBean", Library.class);
+        library.getBook();
         annotationConfig2.close();
     }
 }

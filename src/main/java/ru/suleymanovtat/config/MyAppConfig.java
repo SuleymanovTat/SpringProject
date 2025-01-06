@@ -1,14 +1,14 @@
 package ru.suleymanovtat.config;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.*;
+import ru.suleymanovtat.aop.Library;
+import ru.suleymanovtat.aop.aspects.LoginAspect;
 import ru.suleymanovtat.model.annotation.Child;
 import ru.suleymanovtat.model.bean.Cat;
 
 @Configuration
 @PropertySource("classpath:myApp.properties")
+@EnableAspectJAutoProxy
 public class MyAppConfig {
 
     @Bean
@@ -21,5 +21,15 @@ public class MyAppConfig {
     @Bean
     public Child childBean() {
         return new Child();
+    }
+
+    @Bean
+    public Library libraryBean() {
+        return new Library();
+    }
+
+    @Bean
+    public LoginAspect loginAspectBean() {
+        return new LoginAspect();
     }
 }
