@@ -2,7 +2,7 @@ package ru.suleymanovtat.config;
 
 import org.springframework.context.annotation.*;
 import ru.suleymanovtat.aop.Library;
-import ru.suleymanovtat.aop.aspects.LoginAspect;
+import ru.suleymanovtat.aop.aspects.LibraryAspect;
 import ru.suleymanovtat.model.annotation.Child;
 import ru.suleymanovtat.model.bean.Cat;
 
@@ -29,7 +29,7 @@ public class MyAppConfig {
     }
 
     @Bean
-    public LoginAspect loginAspectBean() {
-        return new LoginAspect();
+    public LibraryAspect libraryAspectBean() {
+        return new LibraryAspect();
     }
 }

@@ -4,9 +4,9 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 
 @Aspect
-public class LoginAspect {
+public class LibraryAspect {
 
-    @Before("execution(public void getBook())")
+    @Before("execution(public void ru.suleymanovtat.aop.Library.getBook())")
     public void beforeGetBookAdvice() {
         System.out.println("beforeGetBookAdvice: попытка получить книгу");
     }
