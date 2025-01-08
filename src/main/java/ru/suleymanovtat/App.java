@@ -89,6 +89,8 @@ public class App {
         System.out.println();
         Library library = annotationConfig2.getBean("libraryBean", Library.class);
         library.getBook();
+        Book book = annotationConfig2.getBean("bookBean", Book.class);
+        library.getBook(book);
         annotationConfig2.close();
     }
 }

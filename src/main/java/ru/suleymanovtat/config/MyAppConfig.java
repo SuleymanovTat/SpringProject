@@ -4,6 +4,7 @@ import org.springframework.context.annotation.*;
 import ru.suleymanovtat.aop.Library;
 import ru.suleymanovtat.aop.aspects.LibraryAspect;
 import ru.suleymanovtat.model.annotation.Child;
+import ru.suleymanovtat.model.bean.Book;
 import ru.suleymanovtat.model.bean.Cat;
 
 @Configuration
@@ -26,6 +27,11 @@ public class MyAppConfig {
     @Bean
     public Library libraryBean() {
         return new Library();
+    }
+
+    @Bean
+    public Book bookBean() {
+        return new Book();
     }
 
     @Bean
