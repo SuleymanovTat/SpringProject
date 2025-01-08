@@ -55,6 +55,7 @@ build/
 .idea/gradle.xml
 .idea/libraries
 .idea/vcs.xml
+.idea/.gitignore
 
 # Mongo Explorer plugin:
 
