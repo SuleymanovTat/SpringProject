@@ -15,6 +15,10 @@ public class LibraryAspect {
     private void getBookName() {
     }
 
+    //&& || !
+    @Pointcut("execution(* ru.suleymanovtat.aop.Library.*(..)) && !execution(* ru.suleymanovtat.aop.Library.getBookName(..)) ")
+    private void allMethods() {}
+
     @Before("getBook()")
     public void beforeGetBookAdvice() {
         System.out.println("beforeGetBookAdvice: 1 попытка получить книгу");
@@ -23,5 +27,10 @@ public class LibraryAspect {
     @Before("getBookName()")
     public void beforeGetBookNameAdvice() {
         System.out.println("beforeGetBookNameAdvice: 2 попытка получить книгу");
+    }
+
+    @Before("allMethods()")
+    public void beforeAllMethodsAdvice() {
+        System.out.println("beforeAllMethodsAdvice: ВСЕГДА");
     }
 }

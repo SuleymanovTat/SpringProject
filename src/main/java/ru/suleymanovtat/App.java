@@ -91,6 +91,7 @@ public class App {
         library.getBook();
         Book book = annotationConfig2.getBean("bookBean", Book.class);
         library.getBook(book);
+        System.out.println(library.getBookName());
         annotationConfig2.close();
     }
 }

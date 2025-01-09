@@ -11,4 +11,8 @@ public class Library {
     public void getBook(Book book) {
         System.out.println("Мы берем книгу: " + book.getName());
     }
+
+    public String getBookName() {
+       return  "Apple";
+    }
 }
