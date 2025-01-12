@@ -32,9 +32,14 @@ public class LoggerStoreAspect {
     }
 
     @Around("execution(* ru.suleymanovtat.aop.Store.getListOfMeals())")
-    public Object aroundGetListOfMealsAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+    public Object aroundGetListOfMealsAdvice(ProceedingJoinPoint proceedingJoinPoint) {
         System.out.println("_____________aroundGetListOfMealsAdvice");
-        Object object = proceedingJoinPoint.proceed();
+        Object object;
+        try {
+            object = proceedingJoinPoint.proceed();
+        } catch (Throwable e) {
+            object = new ArrayList<Meal>();
+        }
         System.out.println("object: " + object);
         System.out.println("_____________aroundGetListOfMealsAdvice");
         return object;
