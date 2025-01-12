@@ -1,10 +1,8 @@
 package ru.suleymanovtat.aop.aspects;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
 import ru.suleymanovtat.model.bean.Meal;
 
 import java.util.ArrayList;
@@ -31,5 +29,14 @@ public class LoggerStoreAspect {
         System.out.println("_____________");
         System.out.println("after: " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
         System.out.println("_____________");
+    }
+
+    @Around("execution(* ru.suleymanovtat.aop.Store.getListOfMeals())")
+    public Object aroundGetListOfMealsAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+        System.out.println("_____________aroundGetListOfMealsAdvice");
+        Object object = proceedingJoinPoint.proceed();
+        System.out.println("object: " + object);
+        System.out.println("_____________aroundGetListOfMealsAdvice");
+        return object;
     }
 }

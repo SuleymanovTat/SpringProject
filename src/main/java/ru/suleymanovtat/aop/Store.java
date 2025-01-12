@@ -3,7 +3,6 @@ package ru.suleymanovtat.aop;
 import ru.suleymanovtat.model.bean.Meal;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Store {
 
@@ -14,10 +13,10 @@ public class Store {
     }
 
     public ArrayList<Meal> getListOfMeals() {
-        int number = new Random().nextInt();
-        if (number % 2 == 0) {
-            throw new NullPointerException("NullPointerException in listOfMeals");
-        }
+//        int number = new Random().nextInt();
+//        if (number % 2 == 0) {
+//            throw new NullPointerException("NullPointerException in listOfMeals");
+//        }
         return listOfMeals;
     }
 }
