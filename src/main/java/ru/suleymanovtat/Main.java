@@ -11,8 +11,12 @@ public class Main {
         AnnotationConfigApplicationContext annotationConfig = new AnnotationConfigApplicationContext(MyAppConfig.class);
         Store store = annotationConfig.getBean("storeBean", Store.class);
         store.addMeal(new Meal("apple"));
-        //LoggerStoreAspect добавляет milk
-        System.out.println(store.getListOfMeals());
+        try {
+            //LoggerStoreAspect добавляет milk
+            System.out.println(store.getListOfMeals());
+        } catch (Exception e) {
+            System.out.println("main exception " + e.getMessage());
+        }
         annotationConfig.close();
     }
 }
